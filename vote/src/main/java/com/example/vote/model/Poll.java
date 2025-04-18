@@ -1,5 +1,6 @@
 package com.example.vote.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -26,12 +27,20 @@ public class Poll {
         /*TODO: write the getTotalVotes method that calculates the total number 
         of votes added to the poll in functional programming style
         */
-        return 0;
+        Integer totalVotes = 0;
+        for(int i = 0; i < pollResult.size(); i++){
+            totalVotes += pollResult.get(pollResult.keySet().toArray()[i]).get();
+        }
+        return totalVotes;
     }
     public List<Integer> getPollResult(){
         /*TODO: write getPollResult method that gets a list
         with the votes given to each option in functional programming style*/
-        return null;
+        List<Integer> result = new ArrayList<>();
+        for(int i = 0; i < pollResult.size(); i++){
+            result.add(pollResult.get(pollResult.keySet().toArray()[i]).get());
+        }
+        return result;
     }
     
 

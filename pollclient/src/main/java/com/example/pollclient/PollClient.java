@@ -53,7 +53,7 @@ public class PollClient {
                     ArrayList<String> requestData=new ArrayList<String>();
                     requestData.add(pollName);
                     requestData.addAll(List.of(optionsArray));
-                    restTemplate.postForObject(BASE_URL + "create/" , requestData, Void.class);
+                    restTemplate.postForObject(BASE_URL + "create" , requestData, Void.class);
                 }
 
                 case 2 -> {

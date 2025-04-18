@@ -19,9 +19,10 @@ public class PollRestController {
     }
     @PostMapping("/create")
     public void createPoll(@RequestBody ArrayList<String> requestData) {
+        System.out.println("Request Data: " + requestData);
         if (requestData.size()<2) return;
         String pollId = requestData.get(0);
-        String[] options = (String[]) requestData.subList(1, requestData.size()).toArray();
+        String[] options = requestData.subList(1, requestData.size()).toArray(new String[0]);
         pollService.createPoll(pollId,options);
     }
     @GetMapping("/{pollId}")
